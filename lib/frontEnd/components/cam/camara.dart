@@ -199,9 +199,9 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                     paths.add(path);
                     setState(() {
                       if (_index < positions.length) _index++;
-                      
+                      segmentHSV(paths);
                     });
-
+                    
                     Navigator.of(context).pop();
                     if (_index == positions.length) Navigator.of(context).pop();
                   },

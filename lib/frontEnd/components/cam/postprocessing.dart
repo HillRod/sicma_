@@ -15,14 +15,14 @@ import 'package:path_provider/path_provider.dart';
   return Image.fromBytes(image.width, image.height, gausblur);
 }*/
 
-void segmentHSV(String path) async {
+void segmentHSV(List paths) async {
   
-  print(path);
+  print(paths[0]);
 
   List<double> mingreenHSV = [100.0, 30.0, 27.0], maxgreenHSV = [175, 100, 100];
   List<double> minblueHSV = [150, 35.0, 30.0], maxblueHSV = [240, 100, 100];
 
-  Image image = decodeImage(File(path).readAsBytesSync());
+  Image image = decodeImage(File(paths[0]).readAsBytesSync());
 
   print(image.width);
   print(image.height);
@@ -79,7 +79,7 @@ void segmentHSV(String path) async {
   }
 
   print("Finiched");
-  File(path).writeAsBytesSync(encodeJpg(image));
+  File(paths[0]).writeAsBytesSync(encodeJpg(image));
   
   //File f = await getImageFileFromAssets('binarized1.png');
   File f2 = await getImageFileFromAssets('binarized2.png');
