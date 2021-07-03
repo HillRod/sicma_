@@ -17,15 +17,15 @@ import 'package:path_provider/path_provider.dart';
 
 void segmentHSV(List paths) async {
   
-  print(paths[0]);
+  //print(paths[0]);
 
   List<double> mingreenHSV = [100.0, 30.0, 27.0], maxgreenHSV = [175, 100, 100];
   List<double> minblueHSV = [150, 35.0, 30.0], maxblueHSV = [240, 100, 100];
 
   Image image = decodeImage(File(paths[0]).readAsBytesSync());
 
-  print(image.width);
-  print(image.height);
+  //print(image.width);
+  //print(image.height);
   bool bluent = true;
   var bluestandart = [0, 0, 0];
   int div = 0;
@@ -52,8 +52,8 @@ void segmentHSV(List paths) async {
         //print(minblueHSV);
         //print(maxblueHSV);
         image.setPixel(i, j, Material.Colors.green.value);
-        print(cHSV);
-        print(i.toString() + " " + j.toString());
+        //print(cHSV);
+        //print(i.toString() + " " + j.toString());
       } else if ((cHSV[0] >= minblueHSV[0] && cHSV[0] <= maxblueHSV[0]) &&
           (cHSV[1] >= minblueHSV[1] && cHSV[1] <= maxblueHSV[1]) &&
           (cHSV[2] >= minblueHSV[2] && cHSV[2] <= maxblueHSV[2])) {
